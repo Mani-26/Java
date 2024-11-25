@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Beginner-level Java tutorial covering JDK, JRE, JVM, data types, and more.">
+    <meta name="description" content="Comprehensive Java Beginner Tutorial covering JDK, JRE, JVM, syntax, loops, OOP, and more.">
     <title>Java Beginner Tutorial</title>
-      <style>
-        /* General Reset */
-body, h1, h2, p, ul, table {
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* General Reset */
+body, h1, h2, p, ul, ol, pre, code {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
 /* Body Styling */
 body {
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
     font-size: 16px;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 /* Header Styling */
 header {
-    background: #0073e6;
+    background: #004d99;
     color: white;
-    padding: 20px;
+    padding: 20px 10px;
     text-align: center;
 }
 
@@ -42,36 +43,31 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Section Styling */
+/* Main Content */
 main {
-    margin: 20px auto;
     padding: 20px;
-    max-width: 800px;
+    max-width: 900px;
+    margin: 20px auto;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #0073e6;
+    color: #004d99;
     margin-bottom: 10px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-table th, table td {
+pre {
+    background: #f4f4f4;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
 }
 
-table th {
-    background: #0073e6;
-    color: white;
+ul, ol {
+    margin: 10px 0 20px 20px;
 }
 
 /* Footer Styling */
@@ -80,77 +76,119 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
 }
 
-      </style>
+    </style>
 </head>
 <body>
     <header>
         <h1>Java Beginner Tutorial</h1>
         <nav>
             <a href="#intro">Introduction</a>
-            <a href="#setup">Setup</a>
-            <a href="#concepts">Core Concepts</a>
-            <a href="#datatypes">Data Types</a>
+            <a href="#features">Features of Java</a>
+            <a href="#setup">Setup & Installation</a>
+            <a href="#syntax">Basic Syntax</a>
+            <a href="#control-structures">Control Structures</a>
+            <a href="#oop">Object-Oriented Programming</a>
         </nav>
     </header>
     <main>
+        <!-- Introduction Section -->
         <section id="intro">
-            <h2>Introduction</h2>
-            <p>Java is a popular programming language used for developing applications on various platforms. In this tutorial, you'll learn the basics of Java programming.</p>
+            <h2>Introduction to Java</h2>
+            <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>
+            <p>It is one of the most popular programming languages for building applications ranging from mobile to enterprise systems.</p>
         </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2>Features of Java</h2>
+            <ul>
+                <li><b>Platform Independent:</b> Write Once, Run Anywhere (WORA) due to Java's bytecode.</li>
+                <li><b>Object-Oriented:</b> Everything in Java revolves around objects and classes.</li>
+                <li><b>Robust:</b> Java provides strong memory management and exception handling.</li>
+                <li><b>Secure:</b> Java is designed with security in mind, making it a preferred choice for web development.</li>
+                <li><b>Multithreading:</b> Supports multiple threads of execution, making applications faster and more efficient.</li>
+            </ul>
+        </section>
+
+        <!-- Setup Section -->
         <section id="setup">
             <h2>Setting Up Java</h2>
-            <ul>
-                <li><b>JDK (Java Development Kit):</b> A software development kit required to develop Java applications.</li>
-                <li><b>JRE (Java Runtime Environment):</b> A set of tools to run Java applications.</li>
-                <li><b>JVM (Java Virtual Machine):</b> A virtual machine that executes Java bytecode.</li>
-            </ul>
-            <p>Download the latest JDK from the <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">official Oracle website</a>.</p>
+            <p>To start programming in Java, follow these steps:</p>
+            <ol>
+                <li>Download the latest JDK from the <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">Oracle website</a>.</li>
+                <li>Install the JDK and set up the `JAVA_HOME` environment variable.</li>
+                <li>Verify the installation by running the following command in your terminal or command prompt:</li>
+                <pre>java -version</pre>
+                <li>Choose an IDE like IntelliJ IDEA, Eclipse, or Visual Studio Code to write and run your code.</li>
+            </ol>
         </section>
-        <section id="concepts">
-            <h2>Core Concepts</h2>
-            <p>Java has several foundational concepts that make it unique:</p>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>Basic Syntax of Java</h2>
+            <p>Here’s a simple Java program:</p>
+            <pre>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</pre>
+            <p>Explanation:</p>
             <ul>
-                <li><b>Object-Oriented:</b> Java uses objects to model real-world entities.</li>
-                <li><b>Platform-Independent:</b> Write once, run anywhere (WORA) is Java's key feature.</li>
-                <li><b>Robust:</b> Java provides strong memory management and exception handling.</li>
+                <li><b>public class:</b> Defines a class named `HelloWorld`.</li>
+                <li><b>main method:</b> The entry point of a Java program.</li>
+                <li><b>System.out.println:</b> Prints a message to the console.</li>
             </ul>
         </section>
-        <section id="datatypes">
-            <h2>Data Types</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>int</td>
-                        <td>Integer type</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>float</td>
-                        <td>Floating-point number</td>
-                        <td>3.14</td>
-                    </tr>
-                    <tr>
-                        <td>char</td>
-                        <td>Character type</td>
-                        <td>'A'</td>
-                    </tr>
-                    <tr>
-                        <td>String</td>
-                        <td>Sequence of characters</td>
-                        <td>"Hello World"</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <!-- Control Structures -->
+        <section id="control-structures">
+            <h2>Control Structures in Java</h2>
+            <p>Control structures help you control the flow of execution. Here's an overview:</p>
+            <h3>Conditionals</h3>
+            <p>Example of an `if-else` statement:</p>
+            <pre>int number = 10;
+if (number > 0) {
+    System.out.println("Positive number");
+} else {
+    System.out.println("Negative number");
+}</pre>
+
+            <h3>Loops</h3>
+            <p>Example of a `for` loop:</p>
+            <pre>for (int i = 0; i < 5; i++) {
+    System.out.println("Count: " + i);
+}</pre>
+        </section>
+
+        <!-- OOP Section -->
+        <section id="oop">
+            <h2>Introduction to Object-Oriented Programming (OOP)</h2>
+            <p>Java is an object-oriented language, which means it is based on objects and classes. Here are some OOP concepts:</p>
+            <ul>
+                <li><b>Class:</b> A blueprint for objects.</li>
+                <li><b>Object:</b> An instance of a class.</li>
+                <li><b>Inheritance:</b> Allows one class to inherit fields and methods from another.</li>
+                <li><b>Encapsulation:</b> Hides internal details and shows only functionality.</li>
+                <li><b>Polymorphism:</b> Allows methods to perform different tasks based on the object.</li>
+            </ul>
+            <p>Example of a class and object:</p>
+            <pre>class Animal {
+    String name;
+
+    void makeSound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Animal();
+        dog.name = "Dog";
+        dog.makeSound();
+    }
+}</pre>
         </section>
     </main>
     <footer>
